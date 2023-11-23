@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col text-center">
-            <h1 class="text-white display-4">Hello Developer!</h1>
+            <h1 class="text-white">Hello Developer!</h1>
             <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
           </div>
         </div>

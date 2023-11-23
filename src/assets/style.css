@@ -6,13 +6,15 @@
   background-size: contain;
 }
 #hero .row {
-  min-height: 400px;
+  min-height: 250px;
 }
 #hero h1 {
   font-weight: 700;
+  font-size: 40px;
 }
 #hero p {
   font-size: 24px;
+  line-height: 28px;
   letter-spacing: 2px;
 }
 
@@ -34,6 +36,12 @@
 
 
 @media (min-width: 1200px) { 
+  #hero h1 {
+    font-size: 56px;
+  }
+  #hero .row {
+    min-height: 400px;
+  }
   #pods .container {
     max-width: 920px;
   }
