@@ -1,6 +1,6 @@
-section {
-  padding: 60px 20px;
-}
+/* section {
+  padding: 60px 10px;
+} */
 #hero {
   background: url("https://via.placeholder.com/1920x650");
   background-size: contain;
@@ -14,4 +14,32 @@ section {
 #hero p {
   font-size: 24px;
   letter-spacing: 2px;
+}
+
+
+
+@media (min-width: 576px) { 
+
+}
+
+
+@media (min-width: 768px) { 
+  
+}
+
+
+@media (min-width: 992px) { 
+
+}
+
+
+@media (min-width: 1200px) { 
+  #pods .container {
+    max-width: 920px;
+  }
+}
+
+
+@media (min-width: 1400px) {
+
 }

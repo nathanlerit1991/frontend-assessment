@@ -4,7 +4,7 @@
 
 <template>
   <main>
-    <section id="hero" class="mh-100">
+    <section id="hero" class="py-4 p-md-5 px-2">
       <div class="container">
         <div class="row align-items-center">
           <div class="col text-center">
@@ -15,7 +15,7 @@
       </div>
     </section>
 
-    <section id="pods">
+    <section id="pods" class="py-4 p-md-5 px-2">
       <div class="container">
         <div class="row">
           <div class="cols col-md-4">
