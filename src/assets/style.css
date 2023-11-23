@@ -1,6 +1,3 @@
-/* section {
-  padding: 60px 10px;
-} */
 #hero {
   background: url("https://via.placeholder.com/1920x650");
   background-size: contain;
@@ -16,6 +13,10 @@
   font-size: 24px;
   line-height: 28px;
   letter-spacing: 2px;
+}
+
+#contents {
+  background: #eff1f2;
 }
 
 
@@ -42,7 +43,8 @@
   #hero .row {
     min-height: 400px;
   }
-  #pods .container {
+  #pods .container,
+  #contents .container {
     max-width: 920px;
   }
 }

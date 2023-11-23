@@ -48,3 +48,9 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.accordion .accordion-button {
+  box-shadow: none;
+}
+</style>

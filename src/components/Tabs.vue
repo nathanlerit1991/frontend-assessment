@@ -18,7 +18,7 @@
       <li class="nav-item" v-for="(tab, index) in props.tabsData" :key="index">
         <a
           class="nav-link"
-          :id="'tab' + index"
+          :id="`tab${index}`"
           :class="{ active: activeTab === index }"
           data-bs-toggle="tab"
           :href="'#content' + index"
@@ -30,11 +30,11 @@
       </li>
     </ul>
 
-    <div class="tab-content p-4">
+    <div class="tab-content p-3">
       <div
         v-for="(tab, index) in props.tabsData"
         :key="index"
-        :id="'content' + index"
+        :id="`content${index}`"
         class="tab-pane"
         :class="{ active: activeTab === index }"
         role="tabpanel"
@@ -43,3 +43,30 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.tabs .nav-link {
+  color: #052c65;
+  border: none;
+}
+.tabs .nav-link.active {
+  background: #cfe2ff;
+  border: none;
+  color: #052c65;
+}
+
+.tab-pane.active {
+  animation: fadeInSlideFromRight 0.2s ease-in-out;
+}
+
+@keyframes fadeInSlideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
