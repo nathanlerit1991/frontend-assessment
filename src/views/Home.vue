@@ -1,8 +1,9 @@
 <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, onBeforeUnmount } from 'vue';
 
   import Pods from '../components/Pods.vue'
   import Accordion from '../components/Accordion.vue'
+  import Tabs from '../components/Tabs.vue'
 
   //Fetch Data in data.json
   const jsonData = ref(null)
@@ -20,11 +21,28 @@
     }
   }
 
+  /*
+    isDesktop - conditionally display Tabs or Accordion via v-if to ensure only one component is visible in the DOM
+    adjust the 768 depending on the desired mobile size
+  */
+  const isDesktop = ref(true)
+  const handleResize = () => {
+    isDesktop.value = window.innerWidth >= 768
+  }
+
 
   onMounted(() => {
     fetchData()
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
   })
 
+  onBeforeUnmount(() => {
+    window.removeEventListener('resize', handleResize)
+  })
+
+  //Dummy Data
   const podsData = ref([
     { img: 'https://via.placeholder.com/400x300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inciddunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' },
     { img: 'https://via.placeholder.com/400x300', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inciddunt ut labore et dolore magna aliqua.' },
@@ -57,10 +75,11 @@
       </div>
     </section>
 
-    <section id="accordion">
+    <section id="contents" class="py-4 p-md-5 px-2">
       <div class="container">
         <div class="row">
-          <Accordion :accordionData="jsonData" />
+          <Tabs v-if="isDesktop" :tabsData="jsonData" />
+          <Accordion v-else :accordionData="jsonData" />
         </div>
       </div>
     </section>
