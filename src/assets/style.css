@@ -1,6 +1,6 @@
 #hero {
-  background: url("https://via.placeholder.com/1920x650");
-  background-size: contain;
+  background: url("@/assets/images/mobilebanner.webp") no-repeat center;
+  background-size: cover;
 }
 #hero .row {
   min-height: 250px;
@@ -16,7 +16,7 @@
 }
 
 #contents {
-  background: #eff1f2;
+  background: #e9eef1;
 }
 
 
@@ -27,7 +27,9 @@
 
 
 @media (min-width: 768px) { 
-  
+  #hero {
+    background: url("@/assets/images/desktopbanner.webp") no-repeat center;
+  }
 }
 
 

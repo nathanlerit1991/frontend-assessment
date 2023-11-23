@@ -7,10 +7,12 @@
 <template>
   <div class="py-2 px-1 h-100">
     <figure class="pods-wrapper text-center h-100 p-3 p-md-4">
-      <img src="https://via.placeholder.com/400x300" alt="pod image"/>
-      <figcaption class="my-4 pb-4">{{ props.description }}</figcaption>
+      <img src="@/assets/images/content.webp" alt="pod image"/>
+      <figcaption class="my-4 pb-4 pb-md-5 pb-lg-4">{{ props.description }}</figcaption>
 
-      <button class="btn text-black text-uppercase">Read More</button>
+      <a href="#">
+        <button class="btn text-black text-uppercase">Read More</button>
+      </a>
     </figure>
   </div>
 </template>
@@ -34,5 +36,9 @@
     bottom: 25px;
     left: 50%;
     transform: translate(-50%, 0);
+  }
+
+  .pods-wrapper button:hover {
+    background: #f2f2f2;
   }
 </style>
